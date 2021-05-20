@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : 0.c
+ Name        : Ornela Curcio.c
  Author      : 
  Version     :
  Copyright   : Your copyright notice
@@ -12,6 +12,6 @@
 #include <stdlib.h>
 
 int main(void) {
-	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
+	puts("!!!Hello Orne!!!"); /* prints !!!Hello World!!! */
 	return EXIT_SUCCESS;
 }
