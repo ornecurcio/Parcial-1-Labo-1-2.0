@@ -411,46 +411,7 @@ int buscaRecaudacionByCUIT(eRecaudacion aAuxiliar[], int cantidadDeArray, eContr
 	return retorno;
 }
 
-int saldoPromedioRecaudaciones(eRecaudacion aAuxiliar[], int cantidadDeArray, eContribuyente aContribuyente[], int cantidadContribuyente )
-{
-	int retorno = -1;
-	if(aAuxiliar!=NULL && cantidadDeArray>0 && aTipo!=NULL && cantidadTipo>0)
-	{
-		for(int i=0; i<cantidadDeArray; i++)
-		{
-			switch(aAuxiliar[i].tipo)
-			{
-				case 1:
-					acumuladorARBA=+aAuxiliar[i].importe;
-					contadorARBA++;
-					break;
-				case 2:
-					acumuladorIIBB=+aAuxiliar[i].importe;
-					contadorIIBB++;
-					break;
-				case 3:
-					acumuladorGANAN=+aAuxiliar[i].importe;
-					contadorGANAN++;
-					break;
-			}
-		}
-		if(contadorARBA>0)
-		{
-			promedioARBA=acumuladorARBA/contadorARBA;
-			retorno=0;
-		}
-		if(contadorIIBB>0)
-		{
-			promedioIIBB=acumuladorARBA/contadorARBA;
-			retorno=0;
-		}
-		if(contadorGANAN>0)
-		{
-			promedioGANAN=acumuladorARBA/contadorARBA;
-			retorno=0;
-		}
-	}
-}
+
 int imprimirRecaudacionSaldadas(eRecaudacion array[], int cantidadDeArray, eTipo aTipo[], int cantidadTipo,eContribuyente aContribuyente[], int cantidadContribuyente)
 {
 	int i;

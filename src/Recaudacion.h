@@ -168,5 +168,5 @@ int imprimirRecaudacionSaldadas(eRecaudacion array[], int cantidadDeArray, eTipo
 */
 int buscaRecaudacionByCUIT(eRecaudacion aAuxiliar[], int cantidadDeArray, eContribuyente aContribuyente[], int cantidadContribuyente, eTipo aTipo[], int cantidadTipo);
 
-int saldoPromedioRecaudaciones(eRecaudacion aAuxiliar[], int cantidadDeArray, eTipo aTipo[], int cantidadTipo);
+
 #endif /* CONTRIBUYENTE_H_ */
