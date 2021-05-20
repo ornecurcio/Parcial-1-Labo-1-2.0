@@ -321,7 +321,7 @@ int imprimirRecaudacionSaldadas(eRecaudacion array[], int cantidadDeArray, eTipo
 	//CABECERA //%5s %10s %8s %8s %8s %10s %10s %10s\n"
 	puts("\n\t> LISTADO Recaudacion SALDADAS");
 	printf("IDRec      DESCRIPCION        MES          IMPORTE         IDCont      CUIL      APELLIDO NOMBRE");
-	if (array != NULL && cantidadDeArray> 0 && aTipo!=NULL && cantidadTipo>0)
+	if (array != NULL && cantidadDeArray> 0 && aTipo!=NULL && cantidadTipo>0 && aContribuyente!=NULL && cantidadContribuyente>0)
 	{
 		for (i = 0; i < cantidadDeArray; i++)
 		{
@@ -450,4 +450,41 @@ int saldoPromedioRecaudaciones(eRecaudacion aAuxiliar[], int cantidadDeArray, eC
 			retorno=0;
 		}
 	}
+}
+int imprimirRecaudacionSaldadas(eRecaudacion array[], int cantidadDeArray, eTipo aTipo[], int cantidadTipo,eContribuyente aContribuyente[], int cantidadContribuyente)
+{
+	int i;
+	int retorno = -1;
+
+
+	puts("\n\t> LISTADO Recaudacion SALDADAS");
+	printf("IDRec      DESCRIPCION        MES          IMPORTE         IDCont      CUIL      APELLIDO NOMBRE");
+	if (array != NULL && cantidadDeArray> 0 && aTipo!=NULL && cantidadTipo>0)
+	{
+		for (i = 0; i < cantidadDeArray; i++)
+		{
+			if (array[i].isEmpty == 1)
+			{
+				continue;
+			}
+			else
+			{
+				if(array[i].estado==SALDADO)
+				{
+					for(int j=0;j<cantidadContribuyente; j++)
+					{
+						if(aContribuyente[j].isEmpty==0 && array[i].idContribuyente==aContribuyente[j].idContribuyente)
+						{
+							getDescripcionRecaudacion(aTipo, cantidadTipo, array[i].tipo, descripcion);
+							printf("\n %-d       %-s       %-d    %-.2f    %-d     %-s   %-s %-s", array[i].idRecaudacion, descripcion, array[i].mes, array[i].importe,
+									array[i].idContribuyente, aContribuyente[j].cuit, aContribuyente[j].apellido, aContribuyente[j].name);
+							retorno=0;
+						}
+					}
+				}
+
+			}
+		}
+	}
+	return retorno;
 }
