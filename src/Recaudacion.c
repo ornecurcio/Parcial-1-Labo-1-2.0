@@ -412,10 +412,12 @@ int buscaRecaudacionByCUIT(eRecaudacion aAuxiliar[], int cantidadDeArray, eContr
 }
 
 
-int imprimirRecaudacionSaldadas(eRecaudacion array[], int cantidadDeArray, eTipo aTipo[], int cantidadTipo,eContribuyente aContribuyente[], int cantidadContribuyente)
+int cuentaRecaudacionRefinanciar(eRecaudacion array[], int cantidadDeArray, eTipo aTipo[], int cantidadTipo,eContribuyente aContribuyente[], int cantidadContribuyente)
 {
 	int i;
 	int retorno = -1;
+	int contadorContribuyente=0;
+	int mayor=0;
 
 
 	puts("\n\t> LISTADO Recaudacion SALDADAS");
@@ -430,15 +432,13 @@ int imprimirRecaudacionSaldadas(eRecaudacion array[], int cantidadDeArray, eTipo
 			}
 			else
 			{
-				if(array[i].estado==SALDADO)
+				if(array[i].estado==REFINANCIAR)
 				{
 					for(int j=0;j<cantidadContribuyente; j++)
 					{
 						if(aContribuyente[j].isEmpty==0 && array[i].idContribuyente==aContribuyente[j].idContribuyente)
 						{
-							getDescripcionRecaudacion(aTipo, cantidadTipo, array[i].tipo, descripcion);
-							printf("\n %-d       %-s       %-d    %-.2f    %-d     %-s   %-s %-s", array[i].idRecaudacion, descripcion, array[i].mes, array[i].importe,
-									array[i].idContribuyente, aContribuyente[j].cuit, aContribuyente[j].apellido, aContribuyente[j].name);
+							contadorContribuyente++;
 							retorno=0;
 						}
 					}

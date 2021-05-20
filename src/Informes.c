@@ -128,7 +128,7 @@ int informe_RecaudacionSaldadasFebrero(eRecaudacion array[], int cantidadDeArray
 	int retorno = -1;
 	puts("\n\t> LISTADO Recaudacion SALDADAS FEBRERO");
 	printf("CUIL      APELLIDO NOMBRE");
-	if (array != NULL && cantidadDeArray> 0 && aTipo!=NULL && cantidadTipo>0)
+	if (array != NULL && cantidadDeArray> 0 && aContribuyente!=NULL && cantidadContribuyente>0)
 	{
 		for (i = 0; i < cantidadDeArray; i++)
 		{
