@@ -41,11 +41,11 @@ int main(void) {
 		if(utn_getNumero(&respuestaMenuPrincipal, "\n----------MENU----------"
 				"\n1.Alta de Contribuyente\n2.Modificar datos del contribuyente\n3.Baja de contribuyente\n"
 				"4.Recaudación\n5.Refinanciar Recaudación\n6.Saldar Recaudación\n"
-				"7.Imprimir Contribuyentes\n8.Imprimir Recaudación\n9.Salir",
+				"7.Imprimir Contribuyentes\n8.Imprimir Recaudación\n9.Informes\n10.Salir\n",
 				"\n-----ERROR INGRESE OPCION VALIDA-----"
 				"\n1.Alta de Contribuyente\n2.Modificar datos del contribuyente\n3.Baja de contribuyente"
 				"\n4.Recaudación\n5.Refinanciar Recaudación\n6.Saldar Recaudación"
-				"\n7.Imprimir Contribuyentes\n8.Imprimir Recaudación\n9.Salir\n", 1, 9, 2)==0){
+				"\n7.Imprimir Contribuyentes\n8.Imprimir Recaudación\n9.Informes\n10.Salir\n", 1, 9, 2)==0){
 			switch(respuestaMenuPrincipal){
 				case 1: //ALTA CONTRIBUYENTE
 					if(altaContribuyente(vecContribuyente, QTY_CONTRIBUYENTE, &contadorContribuyente)==0){
@@ -108,7 +108,7 @@ int main(void) {
 						}
 					}
 				break;
-				case 8: // Informes
+				case 9: // Informes
 					if(!(hayContribuyente(vecContribuyente, QTY_CONTRIBUYENTE))){
 						do{
 							utn_getNumero(&submenu, "\n1.Contribuyentes con mas recaudaciones en estado 'REFINANCIAR'"
@@ -138,6 +138,6 @@ int main(void) {
 
 			}//FIN SWITCH
 		}//FIN IF
-	}while(respuestaMenuPrincipal!=9);
+	}while(respuestaMenuPrincipal!=10);
 	return EXIT_SUCCESS;
 }
