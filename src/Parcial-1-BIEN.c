@@ -126,7 +126,7 @@ int main(void) {
 									informes_RecaudacionSaldadasMayor1000(vecRecaudacion, QTY_RECAUDACION, vecTipo, QTY_TIPO, vecContribuyente, QTY_CONTRIBUYENTE);
 									break;
 								case 3:
-									informes_ContribuyentesXtipoRecaudacion(vecRecaudacion, QTY_RECAUDACION, vecTipo, QTY_TIPO, vecContribuyente, QTY_CONTRIBUYENTE);
+									informes_ContribuyentesXtipoRecaudaciones(vecRecaudacion, QTY_RECAUDACION, vecTipo, QTY_TIPO, vecContribuyente, QTY_CONTRIBUYENTE);
 									break;
 								case 4:
 									informe_RecaudacionSaldadasFebrero(vecRecaudacion, QTY_RECAUDACION, vecContribuyente, QTY_CONTRIBUYENTE);
